@@ -1,12 +1,14 @@
 const fs = require('fs');
 
 class Poc {
-  constructor(private test:string = 'its working') {
-    this.log();
+  constructor() {
+    Poc.testFs();
   }
 
-  log() {
-    console.log(this.test);
+  static testFs() {
+    const f = fs.readFileSync('/Users/githop/dev/js/typescript-node/lib/index.ts', 'utf8');
+
+    console.log(f);
   }
 
 }
