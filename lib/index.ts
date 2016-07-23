@@ -1,3 +1,4 @@
+const fs = require('fs');
 
 class Poc {
   constructor(private test:string = 'its working') {

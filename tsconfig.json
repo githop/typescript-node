@@ -7,6 +7,9 @@
     "strictNullChecks": true,
     "outDir": "dist"
   },
+  "files": [
+    "typings/index.d.ts"
+  ],
   "exclude": [
     "node_modules",
     "typings",
