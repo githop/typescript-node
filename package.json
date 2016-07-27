@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf dist/* && ./node_modules/.bin/tsc && node dist/index.js"
+    "start": "rm -rf dist/* && ./node_modules/.bin/tsc && node dist/index.js",
+    "postinstall": "./node_modules/.bin/typings install dt~node --global --save"
   },
   "author": "",
   "license": "ISC",
