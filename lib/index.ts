@@ -1,19 +1,19 @@
 const fs = require('fs');
-const {join: pjoin} = require('path');
-const filePath = (fileName:string):string => (pjoin(__dirname, '../', fileName));
 
 class Poc {
-  constructor() {
-    Poc.testFs();
+  constructor(private path:string) {}
+
+  static of(path:string) {
+    return new Poc(path);
   }
 
-  static testFs() {
-    const f = fs.readFileSync(filePath('lib/index.ts'), 'utf8');
-
-    console.log(f);
+  fork(errFn, successFn) {
+    return fs.readFile(this.path, 'utf8', (err, data) => {
+      if (err) return errFn(err);
+      successFn(data);
+    });
   }
-
 }
 
-
-new Poc();
+const io = Poc.of('lib/index.ts');
+io.fork((err) => {throw err}, console.log);
