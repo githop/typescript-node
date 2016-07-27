@@ -1,4 +1,6 @@
 const fs = require('fs');
+const {join: pjoin} = require('path');
+const filePath = (fileName:string):string => (pjoin(__dirname, '../', fileName));
 
 class Poc {
   constructor() {
@@ -6,7 +8,7 @@ class Poc {
   }
 
   static testFs() {
-    const f = fs.readFileSync('/Users/githop/dev/js/typescript-node/lib/index.ts', 'utf8');
+    const f = fs.readFileSync(filePath('lib/index.ts'), 'utf8');
 
     console.log(f);
   }
