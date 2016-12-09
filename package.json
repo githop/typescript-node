@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "0.0.2",
     "typescript": "^2.1.4"
   }
 }

@@ -5,6 +5,8 @@
     "moduleResolution": "node",
     "sourceMap": false,
     "strictNullChecks": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
     "outDir": "dist"
   },
   "exclude": [
